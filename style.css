@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap");
+
+:root {
+  --Dark-Purple: #301534;
+  --Pale-Purple: #8b6990;
+  --Light-pink: hsl(275, 100%, 97%);
+  --Pink: #ad28eb;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html,
+body,
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: var(--Light-pink);
+  position: relative;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body::before {
+  position: absolute;
+  content: "";
+  background: url("./assets/images/background-pattern-mobile.svg"), no-repeat;
+  width: 100%;
+  top: 0;
+  height: 232px;
+  background-size: cover;
+  z-index: -1;
+}
+
+#faq-container {
+  font-family: Work Sans, sans-serif;
+
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 8px;
+  max-width: 327px;
+}
+
+#faq-container h1 {
+  color: var(--Dark-Purple, #301534);
+  font-size: 32px;
+  font-weight: 700;
+  display: flex;
+  column-gap: 24px;
+  margin-bottom: 24px;
+}
+#faq-container h1 img {
+  width: 24px;
+  aspect-ratio: 1;
+}
+.accordion {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--Light-pink);
+  margin-bottom: 20px;
+}
+.accordion:last-of-type {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.accordion button {
+  display: flex;
+  color: var(--Dark-Purple, #301534);
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 24px;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  text-align: start;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: Work Sans, sans-serif;
+}
+
+.accordion button:hover,
+.accordion button:active {
+  color: var(--Pink, #ad28eb);
+}
+.accordion div {
+  overflow: hidden;
+  transition: height 0.2s ease-in-out;
+}
+.accordion p {
+  padding-top: 24px;
+  color: var(--Pale-Purple, #8b6990);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+}
+
+@media screen and (min-width: 640px) {
+  body::before {
+    background: url("./assets/images/background-pattern-desktop.svg"), no-repeat;
+    height: 320px;
+  }
+
+  #faq-container {
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 600px;
+  }
+
+  #faq-container h1 {
+    font-size: 56px;
+    margin-bottom: 32px;
+  }
+
+  #faq-container h1 img {
+    width: 40px;
+  }
+  .accordion {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+  }
+  .accordion button {
+    font-size: 18px;
+    column-gap: 0;
+  }
+  .accordion p {
+    padding-top: 24px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+  }
+}
