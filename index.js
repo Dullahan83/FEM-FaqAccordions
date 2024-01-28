@@ -2,8 +2,7 @@ const arrObject = [
   {
     question: `What is Frontend Mentor, and how will it help me?`,
     answer: `Frontend Mentor offers realistic coding challenges to help developers improve their 
-  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-  all levels and ideal for portfolio building.`,
+  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.`,
   },
   {
     question: `Is Frontend Mentor free?`,
@@ -59,8 +58,9 @@ class Accordion {
 
     // Set the initial accordion height depending on initial state
     this.ref = divElement;
-    this.contentHeight = textElement.getBoundingClientRect().height;
-    this.ref.style.height = this.isOpen ? `${this.contentHeight}px` : `0`;
+    const height = textElement.getBoundingClientRect().height;
+    this.contentHeight = height;
+    this.ref.style.height = this.isOpen ? `${height}px` : `0`;
     this.initiateEvent();
   }
 
@@ -78,6 +78,7 @@ class Accordion {
   initiateEvent() {
     this.button.addEventListener("click", () => this.toggleAccordion());
     window.addEventListener("resize", () => this.onResize());
+    window.addEventListener("load", () => this.onResize());
   }
 
   onResize() {
