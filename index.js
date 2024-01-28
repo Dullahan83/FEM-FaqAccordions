@@ -43,7 +43,9 @@ class Accordion {
     this.button.textContent = question;
 
     const imgButtonElement = document.createElement("img");
-    imgButtonElement.src = "./assets/images/icon-plus.svg";
+    imgButtonElement.src = this.isOpen
+      ? "./assets/images/icon-minus.svg"
+      : "./assets/images/icon-plus.svg";
     imgButtonElement.setAttribute("alt", "button icon");
     this.button.append(imgButtonElement);
     accordion.append(this.button);
