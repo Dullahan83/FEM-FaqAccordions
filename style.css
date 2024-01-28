@@ -89,6 +89,7 @@ body::before {
 
 .accordion button:hover,
 .accordion button:active {
+  cursor: pointer;
   color: var(--Pink, #ad28eb);
 }
 .accordion div {
