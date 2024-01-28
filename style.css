@@ -33,7 +33,7 @@ body {
 body::before {
   position: absolute;
   content: "";
-  background: url("./assets/images/background-pattern-mobile.svg"), no-repeat;
+  background: url("./assets/images/background-pattern-mobile.svg") no-repeat;
   width: 100%;
   top: 0;
   height: 232px;
@@ -106,7 +106,8 @@ body::before {
 
 @media screen and (min-width: 640px) {
   body::before {
-    background: url("./assets/images/background-pattern-desktop.svg"), no-repeat;
+    background: url("./assets/images/background-pattern-desktop.svg") no-repeat;
+    background-size: cover;
     height: 320px;
   }
 
